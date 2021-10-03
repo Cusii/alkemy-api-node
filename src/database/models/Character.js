@@ -1,31 +1,31 @@
 module.exports = (sequelize, datatype) => {
-  let alias = "Users";
+  let alias = "Characters";
 
   let cols = {
-    id_user: {
+    id_character: {
       type: datatype.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    first_name: {
+    imagen: {
       type: datatype.STRING,
     },
-    las_name: {
+    name: {
       type: datatype.STRING,
     },
-    email: {
-      type: datatype.STRING,
+    weight: {
+      type: datatype.FLOAT,
     },
-    password: {
+    history: {
       type: datatype.STRING,
     },
   };
 
   let config = {
-    tableName: "users",
+    tableName: "characters",
     timestamps: false,
-  }
+  };
 
-  let Users = sequelize.define(alias, cols, config);
-  return Users;
+  let Character = sequelize.define(alias, cols, config);
+  return Character;
 };
